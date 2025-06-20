@@ -13,6 +13,10 @@ const
 
 include ./nimagemagick/missing
 
+macro cIncludeDir*(dir: static[string], exclude: static[bool] = false): untyped =
+  return quote do:
+    cIncludeDir(@[`dir`], `exclude`)
+
 cPlugin:
   import strutils
 
